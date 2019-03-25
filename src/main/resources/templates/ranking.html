@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt"
+ xmlns:th="http://www.thymeleaf.org"
+>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Alpa Ranking</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="main-css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Alpa</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sua Conta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ranking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login">Sair</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+	<div id="rankingUsuario">
+		<table class="table_users">
+			<thead>
+				<tr>
+					<th>NickName </th>
+					<th>Level </th>
+					<th>Data de Criação </th>
+				</tr>
+			</thead>	
+			<tr th:each="usuario : ${usuarios}">
+				<td><span th:text="${usuario.nickName}"></span></td>
+				<td><span th:text="${usuario.level}"></span></td>
+				<td><span th:text="${usuario.ultimoAcesso}"></span></td>	
+			</tr>	
+		</table>
+	</div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
